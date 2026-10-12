@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A polished, accessible Tic-Tac-Toe game." />
+    <title>Tic-Tac-Toe | Make your move</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="brand-mark" aria-hidden="true">+<span>×</span></div>
+        <div>
+          <p class="eyebrow">Classic strategy game</p>
+          <h1>Tic-Tac-Toe</h1>
+          <p class="subtitle">Three in a row. One smart move at a time.</p>
+        </div>
+      </header>
+
+      <section class="game-layout" aria-label="Tic-Tac-Toe game">
+        <aside class="control-panel panel">
+          <div class="section-heading">
+            <p class="eyebrow">Game setup</p>
+            <h2>Choose your match</h2>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label" id="mode-label">Play mode</span>
+            <div class="segmented-control" role="group" aria-labelledby="mode-label">
+              <button class="segment-button is-selected" type="button" data-mode="human" aria-pressed="true">Two players</button>
+              <button class="segment-button" type="button" data-mode="ai" aria-pressed="false">Vs. computer</button>
+            </div>
+          </div>
+
+          <div class="control-group difficulty-group" id="difficulty-group" aria-hidden="true">
+            <label class="control-label" for="difficulty">Computer difficulty</label>
+            <select id="difficulty" disabled>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard" selected>Hard</option>
+            </select>
+          </div>
+
+          <div class="scoreboard" aria-label="Scoreboard">
+            <div class="score-item score-x"><span>Player X</span><strong id="score-x">0</strong></div>
+            <div class="score-item score-draw"><span>Draws</span><strong id="score-draw">0</strong></div>
+            <div class="score-item score-o"><span id="score-o-label">Player O</span><strong id="score-o">0</strong></div>
+          </div>
+
+          <div class="panel-actions">
+            <button class="button button-primary" id="new-round" type="button">New round <span aria-hidden="true">↗</span></button>
+            <button class="button button-secondary" id="reset-scores" type="button">Reset scores</button>
+          </div>
+        </aside>
+
+        <section class="board-panel panel">
+          <div class="status-row">
+            <div>
+              <p class="eyebrow">Current match</p>
+              <h2 id="status-message" role="status" aria-live="polite">Player X's turn</h2>
+            </div>
+            <div class="turn-pill" id="turn-pill"><span class="turn-dot"></span><span id="turn-label">X to move</span></div>
+          </div>
+
+          <div class="board" id="board" role="grid" aria-label="Tic-Tac-Toe board">
+            <button class="cell" type="button" data-index="0" role="gridcell" aria-label="Top left, empty"></button>
+            <button class="cell" type="button" data-index="1" role="gridcell" aria-label="Top center, empty"></button>
+            <button class="cell" type="button" data-index="2" role="gridcell" aria-label="Top right, empty"></button>
+            <button class="cell" type="button" data-index="3" role="gridcell" aria-label="Middle left, empty"></button>
+            <button class="cell" type="button" data-index="4" role="gridcell" aria-label="Center, empty"></button>
+            <button class="cell" type="button" data-index="5" role="gridcell" aria-label="Middle right, empty"></button>
+            <button class="cell" type="button" data-index="6" role="gridcell" aria-label="Bottom left, empty"></button>
+            <button class="cell" type="button" data-index="7" role="gridcell" aria-label="Bottom center, empty"></button>
+            <button class="cell" type="button" data-index="8" role="gridcell" aria-label="Bottom right, empty"></button>
+          </div>
+
+          <p class="board-note">X always moves first <span aria-hidden="true">•</span> Make a line to win</p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
